@@ -1,8 +1,21 @@
-from pyspark.sql import SparkSession
-import time
-
-spark = SparkSession.builder.master("local[1]").appName("Spark_examples").getOrCreate()
-
-time.sleep(10)
-data = [1,2,3,4,5]
-rdd = spark.sparkContext.parallelize(data)
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "from pyspark.sql import Sap"
+   ]
+  }
+ ],
+ "metadata": {
+  "language_info": {
+   "name": "python"
+  },
+  "orig_nbformat": 4
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}
