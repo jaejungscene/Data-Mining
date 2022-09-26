@@ -4,3 +4,4 @@
 
 ## every algorithm to practise
 ### Association Rules
+### Locally Sensitive Hashing
