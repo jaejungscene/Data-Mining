@@ -10,3 +10,5 @@ ngrok*
 pitchfork*
 *.txt
 *.png
+*.csv
+*.zip
