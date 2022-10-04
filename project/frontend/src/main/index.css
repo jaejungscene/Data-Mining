@@ -1,0 +1,19 @@
+#mainPageText{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 200px;
+    padding-left: 20px;
+    font-size: 50px;
+}
+#mainPageButton{
+    margin: 30%;
+    margin-top: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.mainButton{
+    margin-left: 10px;
+
+}
