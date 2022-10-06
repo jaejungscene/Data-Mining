@@ -12,3 +12,5 @@ pitchfork*
 # *.png
 # *.csv
 # *.zip
+patches.csv
+__MACOSX

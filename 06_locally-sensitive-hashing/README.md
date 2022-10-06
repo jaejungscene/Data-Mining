@@ -1,0 +1,2 @@
+A dataset of images, **patches.csv**, is provided in q4/data.
+Each row in this dataset is a 20 × 20 image patch represented as a 400-dimensional vector. We will use the L1 distance metric on R400 to define similarity of images. We would like to compare the performance of LSH-based approximate near neighbor search with that of linear search.4 You should use the code provided with the dataset for this task.
