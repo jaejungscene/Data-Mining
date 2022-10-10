@@ -4,18 +4,36 @@ import {Button} from "antd";
 import "./index.css"
 export function MainPage(){
     return(
-    <div>
-        <div id="mainPageText">
-        <p>book & paper recommendation site</p>
-        </div>
-        <div id="mainPageButton">
-            <div class="mainButton">
-            <Button type="primary" size="large">회원</Button>
+        <div>
+            <div id="header"></div>
+            <p id="mainPageText">book & paper</p>
+            <p id="mainPageText">recommendation site</p>
+            <div id="mainPageButton">
+                <div class="mainButton">
+                    <Button type="primary" size="large"
+                        onClick={()=>{
+                            window.location.href = "/korean"
+                    }}>
+                        국내도서 추천
+                    </Button>
+                </div>
+                <div class="mainButton">
+                    <Button type="primary" size="large"
+                        onClick={()=>{
+                            window.location.href = "/foregin"
+                    }}>
+                        외국도서 추천
+                    </Button>
+                </div>
+                <div class="mainButton">
+                    <Button type="primary" size="large"
+                        onClick={()=>{
+                            window.location.href = "/paper"
+                    }}>
+                        논문 추천
+                    </Button>
+                </div>
             </div>
-            <div class="mainButton">
-            <Button type="primary" size="large">비회원</Button>
-            </div>
         </div>
-    </div>
     );
 }
