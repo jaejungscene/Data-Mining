@@ -13,20 +13,20 @@ import sqlite3
 
 conn = sqlite3.connect("Books.db")
 cur = conn.cursor()
-# conn.execute("""
-#         CREATE TABLE Korean_book(
-#             id INTEGER,
-#             title TEXT,
-#             genres TEXT,
-#             author TEXT,
-#             rating REAL, 
-#             publisher TEXT, 
-#             p_date INTEGER, 
-#             pages INTEGER, 
-#             description TEXT, 
-#             imgUrl TEXT
-#         )
-# """)
+conn.execute("""
+        CREATE TABLE Korean_book(
+            id INTEGER,
+            title TEXT,
+            genres TEXT,
+            author TEXT,
+            rating REAL, 
+            publisher TEXT, 
+            p_date INTEGER, 
+            pages INTEGER, 
+            description TEXT, 
+            imgUrl TEXT
+        )
+""")
 
 warnings.filterwarnings(action="ignore")
 
@@ -45,7 +45,7 @@ subject_list = {
 img_src_url = "https://contents.kyobobook.co.kr/sih/fit-in/142x0/pdt/"
 success = [200,299]
 max_page = 6
-count = 24415
+count = 0
 
 for i in subject_list:
     print("="*100)
