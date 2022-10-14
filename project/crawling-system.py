@@ -11,7 +11,7 @@ import sqlite3
 {count} {title} {genre_list} {author} {rating} {publisher} {p_date} {pages} {description} {imgUrl})
 """
 
-conn = sqlite3.connect("Books.db")
+conn = sqlite3.connect("./backend/Books.db")
 cur = conn.cursor()
 conn.execute("""
         CREATE TABLE Korean_book(

@@ -1,2 +1,3 @@
 data
-Books.db
+*.db
+test*
