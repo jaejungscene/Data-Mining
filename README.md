@@ -1,7 +1,31 @@
 # Data Mining
+## algorithms practiced
+* Association Rules
+* Locally Sensitive Hashing
 
-:sunny:&nbsp;repository for data mining parctices
+* k-means (Clustering)
+  
+* SVD (Demensionality Reduction)
+* PCA (Demensionality Reduction)
 
-## every algorithm to practise
-### Association Rules
-### Locally Sensitive Hashing
+* Latent Features recommendations (Recommendation)
+* collabrative-filtering recommendations (Recommendation)
+
+* Dynamic Time Warping: DTW (Time Series)
+
+* PageRank (Link Analyse)
+* Hyperlink-Induced Topic Search: HITS (Link Analyse)
+<br>
+<br>
+## Toy Project
+- book recommendation system
+- explanation of toy project is in project folder.
+<br>
+<br>
+## envirment
+```
+Ubuntu 18.04.6 LTS
+python 3.6.9
+java: openjdk 11.0.16 2022-07-19
+spark version 3.3.0
+```
