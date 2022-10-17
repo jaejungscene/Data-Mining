@@ -1,12 +1,15 @@
 import React, { useEffect, useState }  from 'react';
+import {Button} from "antd";
 import axios from "axios";
+import API_URL from "../conf/api-url";
+import "./index.css"
 
 export function KoreanBookPage(){
-
+    console.log("hello world")
     const [genres, setGenres] = useState(null);
     useEffect(()=>{
         axios
-        .get(`${API_URL}/korean`)
+        .get(`${API_URL}korean`)
         .then((result)=>{
             console.log(result);
             setGenres(result.data);
@@ -17,12 +20,32 @@ export function KoreanBookPage(){
     }, [])
 
     if (genres === null){
-        return <h1>장르 정보를 받고 있습니다...</h1>
+        return( 
+            <div id="loading">
+                <Button
+                type="link"
+                loading="true"
+                size="large"
+                style={{fontSize:"250%"}}>
+                    Loading
+                </Button>
+            </div>
+        )
     }
     
     return(
-        <div>
-            
-        </div>
-    );
+    <div>
+        {genres.map((genr)=>{
+            return(
+                <div>
+                    <Button
+                    type="primary"
+                    shape="round"
+                    size="large">
+                        {genr}
+                    </Button>
+                </div>
+            );
+        })}
+    </div>)
 }

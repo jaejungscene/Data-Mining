@@ -1,22 +1,6 @@
-#header{
-    margin-top: 150px;
-}
-
-#mainPageText{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-bottom: 0px;
-    font-size: 50px;
-}
-
-#mainPageButton{
-    margin: 30%;
-    margin-top: 50px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-.mainButton{
-    margin-left: 10px;
+#loading{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }

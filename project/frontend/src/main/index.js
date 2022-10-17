@@ -20,7 +20,7 @@ export function MainPage(){
                 <div class="mainButton">
                     <Button type="primary" size="large"
                         onClick={()=>{
-                            window.location.href = "/foregin"
+                            window.location.href = "/foreign"
                     }}>
                         외국도서 추천
                     </Button>
