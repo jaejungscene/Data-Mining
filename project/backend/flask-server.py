@@ -22,6 +22,11 @@ def sent_korean_genres():
     return jsonify({"reprGenres":repr_genres, "othersGenres":others_genres})
 
 
+@app.route("/korean", methods=["POST"])
+def sent_rec_result():
+    result = []
+
+
 @app.route("/foreign", methods=["GET"])
 def sent_foreign_genres():
     return jsonify({"name":"jaejung"})

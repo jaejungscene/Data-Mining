@@ -10,7 +10,7 @@ export function ForeignBookPage(){
     const [genres, setGenres] = useState(null);
     useEffect(()=>{
         axios
-        .get(`${API_URL}foreign`)
+        .get(`${API_URL}/foreign`)
         .then((result)=>{
             console.log(result);
             setGenres(result.data);
