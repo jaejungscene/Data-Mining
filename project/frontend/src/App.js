@@ -4,7 +4,9 @@ import './App.css';
 import {Switch, Route} from "react-router-dom";
 import {MainPage} from './main';
 import {KoreanBookPage} from './korean';
+import {KoreanBookRecPage} from './korean/recommend';
 import {ForeignBookPage} from './foreign';
+import {ForeignBookRecPage} from './foreign/recommend';
 import {PaperPage} from './paper';
 
 function App() {
@@ -16,8 +18,14 @@ function App() {
         <Route exact={true} path="/korean">
           <KoreanBookPage/>
         </Route>
+        <Route exact={true} path="/korean/recommend">
+          <KoreanBookRecPage/>
+        </Route>
         <Route exact={true} path="/foreign">
           <ForeignBookPage/>
+        </Route>
+        <Route exact={true} path="/foreign/recommend">
+          <ForeignBookRecPage/>
         </Route>
         <Route exact={true} path="/paper">
           <PaperPage/>

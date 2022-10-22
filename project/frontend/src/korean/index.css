@@ -33,12 +33,11 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
     flex-wrap: wrap;
 }
 
 .searchForm{
-    width: 60%;
+    width: 100%;
 }
 
 .booklist{
@@ -48,8 +47,27 @@
     /* padding: 30px; */
 }
 
+.searchBtn{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
 .btn{
     margin: 10px;
 }
 
+.submit-button{
+    margin-top: 5px;
+    margin-left: 37%;
+    width: 180px;
+    height: 50px;
+    font-size: 150%;
+    /* left: -50%; */
+}
 
+.genre-str{
+    margin-top: 10px;
+    margin-left: 40%;
+}
