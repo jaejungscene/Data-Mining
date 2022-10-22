@@ -21,6 +21,10 @@ def sent_korean_genres():
         others_genres = others_genres[:len(others_genres)-1]
     return jsonify({"reprGenres":repr_genres, "othersGenres":others_genres})
 
+@app.route("/korean/search", methods=["GET"])
+def sent_search_result():
+    return jsonify()
+
 
 @app.route("/korean", methods=["POST"])
 def sent_rec_result():
