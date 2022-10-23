@@ -1,5 +1,5 @@
 import sqlite3
-def search_database(searchData):
+def search_database(searchData, dbname):
     print(type(searchData))
     searchData = searchData.replace(",","")
     searchStr = "%"
@@ -8,7 +8,7 @@ def search_database(searchData):
 
     conn = sqlite3.connect("/home/ljj0512/private/workspace/data-mining/project/backend/Books.db")
     cur = conn.cursor()
-    cur.execute(f"SELECT title, author, publisher FROM Korean_book WHERE title LIKE \"{searchStr}\"")
+    cur.execute(f"SELECT title, author, publisher FROM {dbname} WHERE title LIKE \"{searchStr}\"")
     data = cur.fetchall()
     print(type(data))
     print(len(data))
