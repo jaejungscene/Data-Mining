@@ -1,39 +1,47 @@
 import { Button, Table } from 'antd';
 import React, { useState } from 'react';
-import "./index.css"
+import "./utils.css"
 
-export default function SearchTable(props){
+export default function BookListTable(props){
     const [selectedRowKeys, setSelectedRowKeys] = useState([]);
     const [loading, setLoading] = useState(false);
 
     const columns = props.columns;
-    const data = props.data;
     const readBook = props.readBook;
     const setReadBook = props.setReadBook;
-    
 
-      const start = () => {
+    const start = () => {
         setLoading(true);
         // ajax request after empty completing
         setTimeout(() => {
+          var newBooks = [];
+          var count = 0;
+          var flag = false;
+          for(let i=0; i<readBook.length; i++){
+            for(let j=0; j<selectedRowKeys.length; j++){
+              if(selectedRowKeys[j] == readBook[i].key){
+                flag = true;
+                break;
+              }
+            }
+            if(flag==false){
+              newBooks.push({
+                title: readBook[i].title,
+                author: readBook[i].author,
+                publisher: readBook[i].publisher,
+                key: count
+              });
+              count++;
+            }
+            else{
+              flag = false;
+            }
+          }
+          console.log("newBook list: ",newBooks);
           setSelectedRowKeys([]);
           setLoading(false);
-          var newBooks = [];
-          for(let i=0; i<readBook.length; i++){
-            newBooks.push(
-              readBook[i]
-            );
-          }
-          for(let i=0; i<selectedRowKeys.length; i++){
-            console.log("check");
-            newBooks.push(
-              data[selectedRowKeys[i]]
-            );
-          }
-          console.log("newBooks: ",newBooks);
-          
           setReadBook(newBooks);
-        }, 1000);
+        }, 500);
       };
       const onSelectChange = (newSelectedRowKeys) => {
         console.log('selectedRowKeys changed: ', newSelectedRowKeys);
@@ -53,7 +61,7 @@ export default function SearchTable(props){
           >
             {/* <div className='searchBtn'> */}
               <Button type="primary" onClick={()=>start(selectedRowKeys)} disabled={!hasSelected} loading={loading}>
-                읽은 책 리스트에 추가
+                리스트에서 삭제
               </Button>
             {/* </div> */}
             <span
@@ -67,7 +75,7 @@ export default function SearchTable(props){
           <Table 
             rowSelection={rowSelection}
             columns={columns}
-            dataSource={data}
+            dataSource={readBook}
             pagination={{pageSize:5}}
             size="small"
           />

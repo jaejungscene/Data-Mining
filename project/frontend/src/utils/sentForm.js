@@ -1,15 +1,17 @@
-import React, { useEffect, useState }  from 'react';
-import {Button, Form, Table, Divider} from "antd";
-import axios from "axios";
-import API_URL from "../conf/api-url";
-import "./index.css"
+import React from 'react';
+import { useHistory } from 'react-router-dom';
+import {Button, Form, Divider, message} from "antd";
+import "./utils.css"
+import BookListTable from './bookList';
 
 export default function SentFrom(props){
     const columns = props.columns;
     const genres = props.genres;
-    const readBook = props.readBook
+    const readBook = props.readBook;
+    const setReadBook = props.setReadBook;
     const genreToggle = props.genreToggle;
     const btnActive= props.btnActive;
+    const sentData = useHistory();
 
     const Submit = ()=>{
         var selectedGenres = [];
@@ -18,16 +20,25 @@ export default function SentFrom(props){
                 selectedGenres.push(genres["reprGenres"][i]);
             }
         }
-        axios.post(`${API_URL}/korean`,{
-            books: readBook,
-            genres: selectedGenres,
-        })
-        .then((result)=>{
-            console.log(result);
-        })
-        .catch((error)=>{
-            console.error(error);
-        })
+        if(selectedGenres.length == 0){
+            message.error("장르를 하나라도 선택해 주세요!");
+        }
+        else{
+            console.log({
+                books: readBook,
+                genres: selectedGenres,
+            })
+            var where = (/^[A-Za-z0-9]*$/).test(selectedGenres[0][0])
+                        ? "foreign" : "korean"
+            sentData.push({
+                pathname:"/recommend",
+                state:{
+                    where: where,
+                    books: readBook,
+                    genres: selectedGenres,
+                }
+            });
+        }
     };
 
     return(
@@ -35,11 +46,10 @@ export default function SentFrom(props){
             <div>
                 <div className='booklist'>
                     <h3>읽은 책 리스트</h3>
-                    <Table 
-                        columns={columns}
-                        dataSource={readBook}
-                        pagination={{pageSize:5}}
-                        size="small"
+                    <BookListTable 
+                            columns={columns} 
+                            readBook={readBook}
+                            setReadBook={setReadBook}
                     />
                 </div>
             </div>

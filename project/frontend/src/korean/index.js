@@ -1,10 +1,10 @@
 import React, { useEffect, useState }  from 'react';
-import {Button, Transfer, Form, Divider, Input, Table, List} from "antd";
+import {Button, Divider, Input} from "antd";
 import axios from "axios";
 import API_URL from "../conf/api-url";
 import "./index.css"
-import SearchTable from "./searchTable"
-import SentFrom from './sentForm';
+import SearchTable from "../utils/searchTable"
+import SentFrom from '../utils/sentForm';
 
 export function KoreanBookPage(){
     const [genres, setGenres] = useState(null);
@@ -70,7 +70,7 @@ export function KoreanBookPage(){
         },
     ];
 
-    console.log(searchResult);
+    // console.log(searchResult);
 
     if (genres === null){
         return( 
@@ -90,6 +90,7 @@ export function KoreanBookPage(){
     if(searchResult == null){
         return(
             <div>
+                <h2>국내도서 추천</h2>
                 <div className="searchArea">
                     <h3>인상깊게 읽었던 책이 있다면 검색창에 검색 후 추가해 보세요.</h3>
                     <Input.Search
@@ -110,6 +111,7 @@ export function KoreanBookPage(){
                     genres={genres}
                     readBook={readBook}
                     btnActive={btnActive}
+                    setReadBook={setReadBook}
                     genreToggle={genreToggle}
                 />
             </div>
@@ -119,6 +121,7 @@ export function KoreanBookPage(){
     if(searchResult.length != 0){
         return(
             <div>
+                <h2>국내도서 추천</h2>
                 <div className="searchArea">
                     <h3>인상깊게 읽었던 책이 있다면 검색창에 검색 후 추가해 보세요.</h3>
                     <Input.Search
@@ -133,7 +136,8 @@ export function KoreanBookPage(){
                             columns={columns} 
                             data={searchResult} 
                             readBook={readBook}
-                            setReadBook={setReadBook}/>
+                            setReadBook={setReadBook}
+                        />
                     </div>
                 </div>
 
@@ -143,6 +147,7 @@ export function KoreanBookPage(){
                     genres={genres}
                     readBook={readBook}
                     btnActive={btnActive}
+                    setReadBook={setReadBook}
                     genreToggle={genreToggle}
                 />
             </div>
@@ -153,6 +158,7 @@ export function KoreanBookPage(){
         console.log("check01");
         return(
             <div>
+                <h2>국내도서 추천</h2>
                 <div className="searchArea">
                     <h3>인상깊게 읽었던 책이 있다면 검색창에 검색 후 추가해 보세요.</h3>
                     <Input.Search
@@ -171,6 +177,7 @@ export function KoreanBookPage(){
                     genres={genres}
                     readBook={readBook}
                     btnActive={btnActive}
+                    setReadBook={setReadBook}
                     genreToggle={genreToggle}
                 />
             </div>

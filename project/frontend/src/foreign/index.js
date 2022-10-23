@@ -3,8 +3,8 @@ import {Button, Divider, Input} from "antd";
 import axios from "axios";
 import API_URL from "../conf/api-url";
 import "./index.css"
-import SearchTable from "./searchTable"
-import SentFrom from './sentForm';
+import SearchTable from "../utils/searchTable"
+import SentFrom from '../utils/sentForm';
 
 export function ForeignBookPage(){
     const [genres, setGenres] = useState(null);
@@ -14,7 +14,7 @@ export function ForeignBookPage(){
 
     useEffect(()=>{
         axios
-        .get(`${API_URL}/korean`)
+        .get(`${API_URL}/foreign`)
         .then((result)=>{
             setGenres(result.data);
             const temp = result.data["reprGenres"];
@@ -46,7 +46,7 @@ export function ForeignBookPage(){
     const onSearch = (inputData)=>{
         console.log("sent:",inputData);
         axios
-        .get(`${API_URL}/korean/search=${inputData}`)
+        .get(`${API_URL}/foreign/search=${inputData}`)
         .then((result)=>{
             setSearchResult(result.data);
         })
@@ -70,7 +70,7 @@ export function ForeignBookPage(){
         },
     ];
 
-    console.log(searchResult);
+    // console.log(searchResult);
 
     if (genres === null){
         return( 
@@ -90,6 +90,7 @@ export function ForeignBookPage(){
     if(searchResult == null){
         return(
             <div>
+                <h2>해외도서 추천</h2>
                 <div className="searchArea">
                     <h3>인상깊게 읽었던 책이 있다면 검색창에 검색 후 추가해 보세요.</h3>
                     <Input.Search
@@ -110,6 +111,7 @@ export function ForeignBookPage(){
                     genres={genres}
                     readBook={readBook}
                     btnActive={btnActive}
+                    setReadBook={setReadBook}
                     genreToggle={genreToggle}
                 />
             </div>
@@ -119,6 +121,7 @@ export function ForeignBookPage(){
     if(searchResult.length != 0){
         return(
             <div>
+                <h2>해외도서 추천</h2>
                 <div className="searchArea">
                     <h3>인상깊게 읽었던 책이 있다면 검색창에 검색 후 추가해 보세요.</h3>
                     <Input.Search
@@ -133,7 +136,8 @@ export function ForeignBookPage(){
                             columns={columns} 
                             data={searchResult} 
                             readBook={readBook}
-                            setReadBook={setReadBook}/>
+                            setReadBook={setReadBook}
+                        />
                     </div>
                 </div>
 
@@ -143,6 +147,7 @@ export function ForeignBookPage(){
                     genres={genres}
                     readBook={readBook}
                     btnActive={btnActive}
+                    setReadBook={setReadBook}
                     genreToggle={genreToggle}
                 />
             </div>
@@ -153,6 +158,7 @@ export function ForeignBookPage(){
         console.log("check01");
         return(
             <div>
+                <h2>해외도서 추천</h2>
                 <div className="searchArea">
                     <h3>인상깊게 읽었던 책이 있다면 검색창에 검색 후 추가해 보세요.</h3>
                     <Input.Search
@@ -171,6 +177,7 @@ export function ForeignBookPage(){
                     genres={genres}
                     readBook={readBook}
                     btnActive={btnActive}
+                    setReadBook={setReadBook}
                     genreToggle={genreToggle}
                 />
             </div>

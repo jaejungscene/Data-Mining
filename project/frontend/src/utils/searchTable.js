@@ -1,6 +1,6 @@
 import { Button, Table } from 'antd';
 import React, { useState } from 'react';
-import "./index.css"
+import "./utils.css"
 
 export default function SearchTable(props){
     const [selectedRowKeys, setSelectedRowKeys] = useState([]);
@@ -10,30 +10,33 @@ export default function SearchTable(props){
     const data = props.data;
     const readBook = props.readBook;
     const setReadBook = props.setReadBook;
-    
+    console.log(typeof(columns));
+    console.log(typeof(readBook));
+    console.log(typeof(setReadBook));
 
       const start = () => {
         setLoading(true);
         // ajax request after empty completing
         setTimeout(() => {
-          setSelectedRowKeys([]);
-          setLoading(false);
           var newBooks = [];
           for(let i=0; i<readBook.length; i++){
-            newBooks.push(
-              readBook[i]
-            );
+            newBooks.push(readBook[i]);
           }
+          var count = readBook.length;
           for(let i=0; i<selectedRowKeys.length; i++){
-            console.log("check");
-            newBooks.push(
-              data[selectedRowKeys[i]]
-            );
+            newBooks.push({
+              title: data[selectedRowKeys[i]].title,
+              author: data[selectedRowKeys[i]].author,
+              publisher: data[selectedRowKeys[i]].publisher,
+              key: count
+            });
+            count++;
           }
           console.log("newBooks: ",newBooks);
-          
+          setSelectedRowKeys([]);
+          setLoading(false);
           setReadBook(newBooks);
-        }, 1000);
+        }, 500);
       };
       const onSelectChange = (newSelectedRowKeys) => {
         console.log('selectedRowKeys changed: ', newSelectedRowKeys);
