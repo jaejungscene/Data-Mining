@@ -3,6 +3,8 @@ from flask import Flask, request, jsonify
 import os.path as osp
 import json
 from utils import search_database
+from analysis.analyse import analyse
+
 
 app = Flask(__name__)
 
@@ -64,7 +66,10 @@ def sent_foreign_search_result(searchData):
 def sent_rec_result():
     with open(f"{data_path}/response.json", "w") as f:
         json.dump(request.json, f)
-    return request.json
+    result = analyse(request.json)
+    print(len(result))
+    print(type(result))
+    return jsonify(result)
 
 
 
