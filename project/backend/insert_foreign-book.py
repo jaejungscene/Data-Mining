@@ -3,7 +3,7 @@
 import pandas as pd
 import sqlite3
 
-conn = sqlite3.connect("./backend/Books.db")
+conn = sqlite3.connect("./Books.db")
 cur = conn.cursor()
 conn.execute("""
         CREATE TABLE Foreign_book(
