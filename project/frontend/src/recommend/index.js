@@ -29,7 +29,7 @@ export function RecommendPage(){
 
     }
 
-    if (recResult === []){
+    if (recResult.length == 0){
         return( 
             <div id="loading">
                 <Button
@@ -46,7 +46,7 @@ export function RecommendPage(){
     else{
         return(
             <div>
-                <h3>** 도서 추천 결과 **</h3>
+                <h3 style={"margin-left: 40%;"}>** 도서 추천 결과 **</h3>
                 <div id="book-list">
                     {recResult.map((book)=>{
                         if(book.rating!=null){
