@@ -44,10 +44,10 @@ export function KoreanBookPage(){
     };
 
     const onSearch = (inputData)=>{
-        console.log("sent:",inputData);
         axios
         .get(`${API_URL}/korean/search=${inputData}`)
         .then((result)=>{
+            console.log(result.data);
             setSearchResult(result.data);
         })
         .catch((error)=>{
@@ -118,7 +118,7 @@ export function KoreanBookPage(){
         )
     }
 
-    if(searchResult.length != 0){
+    if(searchResult.length !== 0){
         return(
             <div>
                 <h2>국내도서 추천</h2>
@@ -155,7 +155,6 @@ export function KoreanBookPage(){
     }
 
     else{
-        console.log("check01");
         return(
             <div>
                 <h2>국내도서 추천</h2>

@@ -10,9 +10,9 @@ export default function SearchTable(props){
     const data = props.data;
     const readBook = props.readBook;
     const setReadBook = props.setReadBook;
-    console.log(typeof(columns));
-    console.log(typeof(readBook));
-    console.log(typeof(setReadBook));
+    // console.log(typeof(columns));
+    // console.log(typeof(readBook));
+    // console.log(typeof(setReadBook));
 
       const start = () => {
         setLoading(true);
@@ -26,6 +26,10 @@ export default function SearchTable(props){
           for(let i=0; i<selectedRowKeys.length; i++){
             newBooks.push({
               title: data[selectedRowKeys[i]].title,
+              id: data[selectedRowKeys[i]].id,
+              genres: data[selectedRowKeys[i]].genres,
+              rating: data[selectedRowKeys[i]].rating,
+              pages: data[selectedRowKeys[i]].pages,
               author: data[selectedRowKeys[i]].author,
               publisher: data[selectedRowKeys[i]].publisher,
               key: count
