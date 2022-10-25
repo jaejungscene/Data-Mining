@@ -11,7 +11,7 @@ import sqlite3
 {count} {title} {genre_list} {author} {rating} {publisher} {p_date} {pages} {description} {imgUrl})
 """
 
-conn = sqlite3.connect("./backend/Books.db")
+conn = sqlite3.connect("./Books.db")
 cur = conn.cursor()
 conn.execute("""
         CREATE TABLE Korean_book(
@@ -30,7 +30,7 @@ conn.execute("""
 
 warnings.filterwarnings(action="ignore")
 
-path = "/home/ljj0512/private/workspace/data-mining/project/data/korean-books.csv"
+path = "/home/ljj0512/private/workspace/data-mining/project/backend/data/korean-books.csv"
 with open(path, "w") as f:
     f.write("\"title\",\"genres\",\"author\",\"rating\",\"publisher\",\"p-date\",\"pages\",\"description\",\"imgUrl\"\n")
 
