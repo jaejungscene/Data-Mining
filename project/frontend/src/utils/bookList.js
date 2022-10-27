@@ -27,6 +27,8 @@ export default function BookListTable(props){
             if(flag==false){
               newBooks.push({
                 title: readBook[i].title,
+                id: readBook[i].id,
+                genres: readBook[i].genres,
                 author: readBook[i].author,
                 publisher: readBook[i].publisher,
                 key: count
