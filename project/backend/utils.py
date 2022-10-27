@@ -8,22 +8,35 @@ def search_database(searchData, dbname):
 
     conn = sqlite3.connect("/home/ljj0512/private/workspace/data-mining/project/backend/Books.db")
     cur = conn.cursor()
-    cur.execute(f"SELECT title, author, publisher FROM {dbname} WHERE title LIKE \"{searchStr}\"")
+    cur.execute(f"SELECT id, title, author, publisher, genres, rating, pages FROM {dbname} WHERE title LIKE \"{searchStr}\"")
     data = cur.fetchall()
     print(type(data))
     print(len(data))
     if len(data) != 0:
         searchResult = []
-        for i, (title, author, publisher) in enumerate(data):
-            if (author is not None) and ("외" in author):
-                # author = author[:-2]
-                author = author + "..."
-            searchResult.append({
-                "key": i,
-                "title":title,
-                "author":author,
-                "publisher":publisher,
-            })
+        for i, (id, title, author, publisher, genres, rating, pages) in enumerate(data):
+            if dbname == "Korean_book":
+                searchResult.append({
+                    "key": i,
+                    "id": id,
+                    "title":title,
+                    "author":author,
+                    "publisher":publisher,
+                    "genres":genres[5:],
+                    "rating":rating,
+                    "pages":pages
+                })
+            else:
+                searchResult.append({
+                    "key": i,
+                    "id": id,
+                    "title":title,
+                    "author":author,
+                    "publisher":publisher,
+                    "genres":genres,
+                    "rating":rating,
+                    "pages":pages
+                })
         cur.close()
         conn.close()
         return searchResult
