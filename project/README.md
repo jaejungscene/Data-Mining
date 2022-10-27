@@ -39,4 +39,4 @@ type and enter (1)`npm install`, (2)`npm start` in terminal after go to `project
 
 
 ## Expreiment
-- Every expreiment result is in `project/backend/analysis/korean-book-analyse.ipynb` & `project/backend/analysis/foreign-book-analyse.ipynb`
+- Every expreiment result is in [project/backend/analysis/analyse.ipynb](https://github.com/jaejungscene/data-mining/tree/main/project/backend/analysis)
