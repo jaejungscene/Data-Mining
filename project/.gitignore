@@ -1,4 +1,10 @@
 __pycache__
-data
-*.db
 test*
+ig_*
+*.json
+ForBookMatrix.csv
+ForBookMatrix.pkl
+KorBookMatrix.csv
+KorBookMatrix.pkl
+Books-backup.db
+Books.db

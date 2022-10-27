@@ -16,7 +16,7 @@ export function RecommendPage(){
         axios
         .post(`${API_URL}/recommend`, location.state)
         .then((result)=>{
-            console.log(result.data);
+            console.log("received data:",result.data);
             setRecResult(result.data);
         })
         .catch((error)=>{
@@ -25,8 +25,8 @@ export function RecommendPage(){
         });
     }, [])
 
-    const gotoLike = ()=>{
-
+    const gotoLike = (title)=>{
+        window.location.href = `${GoogleLink}${title}`
     }
 
     if (recResult.length == 0){
@@ -46,13 +46,13 @@ export function RecommendPage(){
     else{
         return(
             <div>
-                <h3 style={"margin-left: 40%;"}>** 도서 추천 결과 **</h3>
+                <h3>** 도서 추천 결과 **</h3>
                 <div id="book-list">
                     {recResult.map((book)=>{
                         if(book.rating!=null){
                         return(
                             <div className='book-card'>
-                                <Link className='book-link' onClick={gotoLike}>
+                                <Link className='book-link' onClick={()=>gotoLike(book.title)}>
                                     <div>
                                         <img className='book-img' src={`${book.imgUrl}`}/>
                                     </div>

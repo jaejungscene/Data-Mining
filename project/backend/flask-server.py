@@ -5,10 +5,9 @@ import json
 import pickle
 from utils import search_database
 from analysis.analyse import analyse
-from numpy import genfromtxt
 app = Flask(__name__)
 DATA_PATH = "/home/ljj0512/private/workspace/data-mining/project/backend/data"
-PORT = 8080
+PORT = 8088
 HOST = "localhost"
 with open(f"{DATA_PATH}/KorBookMatrix.pkl", "rb") as f:
     KorBookMatrix = pickle.load(f)
@@ -75,6 +74,7 @@ def sent_rec_result():
     print(len(result))
     print(type(result))
     return jsonify(result)
+    # return request.json
 
 
 

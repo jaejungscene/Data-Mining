@@ -18,9 +18,9 @@
 
 <br>
 
-## Toy Project
+## Project
 - book recommendation system
-- explanation of toy project is in project folder.
+- explanation of the project is in project folder.
   
 <br>
 
