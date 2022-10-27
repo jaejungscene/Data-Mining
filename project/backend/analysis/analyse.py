@@ -111,51 +111,6 @@ def linear_search(KorBookMatrix, userProfile, topNum, genre_dim):
 
 
 
-
-def mySimilarity(x :np.array, user :np.array):
-    if(any(x[0]==user[0])):
-        return 0
-    elif(any(x[-1]==user[2])):
-        return 1.3*((np.dot(x[1:-1],user[1]))/(norm(x[1:-1])*norm((user[1]>0))))
-    else:
-        return ( (np.dot(x[1:-1],user[1]))/(norm(x[1:-1])*norm((user[1]>0))) )
-
-def my_search(KorBookMatrix, userProfile, topNum):
-    similarity = map(
-        lambda bookProfile: \
-            (int(bookProfile[0]),mySimilarity(bookProfile, userProfile))
-            ,KorBookMatrix)
-    best = sorted(similarity, key=lambda t: -t[1])[:topNum]
-    return [t[0] for t in best]
-    # return [t for t in best]
-
-
-
-
-def myHash(s):
-    if s == None:
-        return 0
-    else:
-        return int(hashlib.sha1(s.encode("utf-8")).hexdigest(), 16) % (10 ** 9)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
->>>>>>> cf1ccebb782f5c56896b689abaf2a0e7b2f76236
-
-
-
-
 def mySimilarity(x :np.array, user :np.array):
     if(any(x[0]==user[0])):
         return 0
