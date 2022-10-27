@@ -129,42 +129,8 @@ def my_search(Matrix, userProfile, topNum):
     # return [t for t in best]
 
 
-
-
 def myHash(s):
     if s == None:
         return 0
     else:
         return int(hashlib.sha1(s.encode("utf-8")).hexdigest(), 16) % (10 ** 9)
-
-
-def n_gram_hash(text, n, where):
-    result = []
-    if len(text) > n:
-        for i in range(len(text)):
-            if i+n > len(text):
-                break
-            result.append(hash(text[i:i+n]))
-    else:
-        result.append(hash(text))
-    # if where == "korean":
-    #     result = result + [0.0 for _ in range(KOR_MAX_LEN_n_2 - len(result))]
-    # else:
-    #     result = result + [0.0 for _ in range(FOR_MAX_LEN_n_2 - len(result))]
-    return result
-
-
-
-def create_function(dimensions, thresholds):
-  # Creates a hash function from a list of dimensions and thresholds.
-  def f(v):
-    boolarray = [v[dimensions[i]] >= thresholds[i] for i in range(len(dimensions))]
-    return "".join(map(str, map(int, boolarray)))
-  return f
-
-
-
-import random
-seed = 30
-random.seed(30)
-print(hash("김훈"))
