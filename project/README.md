@@ -43,10 +43,13 @@ type and enter (1)`npm install`, (2)`npm start` in terminal after go to `project
 - Korean book table in Books.db
 ![Screen Shot 2022-10-27 at 6 07 01 PM](https://user-images.githubusercontent.com/88542073/198242621-55191193-cbd4-4a59-840e-194ff7361a4a.png)
   - total number of books is **43511**
+  - total number of genres **2848**
+  - feature matrix of Korean boos is 43511(rows)x2850(columns[id,binary genres vector(2848),hashing value of author])
 - Foreign book table in Books.db
 ![Screen Shot 2022-10-27 at 6 05 56 PM](https://user-images.githubusercontent.com/88542073/198242393-0849b7e0-22d7-4779-8993-c3a34a1ba443.png)
   - total number of books is **45895**
-
-
+  - total number of genres **980**
+  - feature matrix of Foreign book is 45895(rows)x982(columns[id,binary genres vector(980),hashing value of author])
+  
 ## Expreiment
 - Every expreiment result is in [project/backend/analysis/analyse.ipynb](https://github.com/jaejungscene/data-mining/tree/main/project/backend/analysis)
