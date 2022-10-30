@@ -10,8 +10,10 @@ the algorithm is
     - if get both of genres and read book list from user, searching through my similarity & my search, which is made by my idea (the experiment proved that this my method performs overwhelmingly well.
   - (third), Recommendations are made in the order of high similarity scores.  
 
-you can check the results & codes of experiments in analyse.py and analyse.ipynb in "project/backend/analysis" folder.  
+you can check the results & codes of experiments in `analyse.py` and `analyse.ipynb` in "project/backend/analysis" folder.  
 recommendation for korean and foreign operates separatly.  
+[The report paper](https://github.com/jaejungscene/data-mining/blob/main/project/report-paper.pdf) written in Korean explains in detail the algorithm, the overall structure and all of this project(objective, purpose, moviation, novelty ...).  
+So, at least try reading my report paper and let me know by e-mail if you still don't understand something or if there's anything wrong😊
 
 
 ## Web page interface - demonstration vedio
