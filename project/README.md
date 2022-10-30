@@ -10,8 +10,10 @@ the algorithm is
     - if get both of genres and read book list from user, searching through my similarity & my search, which is made by my idea (the experiment proved that this my method performs overwhelmingly well.
   - (third), Recommendations are made in the order of high similarity scores.  
 
-you can check the results & codes of experiments in analyse.py and analyse.ipynb in "project/backend/analysis" folder.  
+you can check the results & codes of experiments in `analyse.py` and `analyse.ipynb` in "project/backend/analysis" folder.  
 recommendation for korean and foreign operates separatly.  
+[The report paper](https://github.com/jaejungscene/data-mining/blob/main/project/report-paper.pdf) written in Korean explains in detail the algorithm, the overall structure and all of this project(objective, purpose, moviation, novelty ...).  
+So, at least try reading my report paper and let me know by e-mail if you still don't understand something or if there's anything wrong😊
 
 
 ## Web page interface - demonstration vedio
@@ -23,9 +25,11 @@ https://user-images.githubusercontent.com/88542073/198238373-4a68cc36-e8ed-4d51-
 
 
 ## How to opearte the entire recommendation system simply
-First, require 
+1. require 
 ```
+- sqlite3
 - python >= 3.6
+  - sqlite3 (pip install db-sqlite3)
   - pypark
   - flask
   - numpy
@@ -33,9 +37,12 @@ First, require
 - nodejs & npm
 - react library: react-router-dom, antd
 ```
-Second, clone data-mining ( `git clone https://github.com/jaejungscene/data-mining.git` ).  
-type and enter `flask-server.py` in terminal after go to `project/backend` folder.   
-type and enter (1)`npm install`, (2)`npm start` in terminal after go to `project/frontend` folder.  
+2. clone data-mining ( `git clone https://github.com/jaejungscene/data-mining.git` ).
+3. unzip "Books.db.zip" to "Books.db" in that location.  
+4. run both the cells of `korean-book.ipynb` and `foreign-book.ipynb` "/project/backend/preprocessing" separately to make.  
+  4-1. after (4), there will be each feature matrix of korean and foreign books.
+5. type and enter `flask-server.py` in terminal after go to `project/backend` folder.  
+6. type and enter (1)`npm install`, (2)`npm start` in terminal after go to `project/frontend` folder.  
 - warning: you have to match hostname, port number of `API_URL` variable in `project/frontend/src/conf/api-url.js` folder and values of `HOST`, `PORT` variables in `project/backend/flask-server.py`.  
 
 
@@ -52,4 +59,4 @@ type and enter (1)`npm install`, (2)`npm start` in terminal after go to `project
   - feature matrix of Foreign book is 45895(rows)x982(columns[id,binary genres vector(980),hashing value of author])
   
 ## Expreiment
-- Every expreiment result is in [project/backend/analysis/analyse.ipynb](https://github.com/jaejungscene/data-mining/tree/main/project/backend/analysis)
+- Expreiments that have every important results conpectly is in [project/backend/analysis/analyse.ipynb](https://github.com/jaejungscene/data-mining/blob/main/project/backend/analysis/analyse.py)
