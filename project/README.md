@@ -23,9 +23,11 @@ https://user-images.githubusercontent.com/88542073/198238373-4a68cc36-e8ed-4d51-
 
 
 ## How to opearte the entire recommendation system simply
-First, require 
+1. require 
 ```
+- sqlite3
 - python >= 3.6
+  - sqlite3 (pip install db-sqlite3)
   - pypark
   - flask
   - numpy
@@ -33,9 +35,12 @@ First, require
 - nodejs & npm
 - react library: react-router-dom, antd
 ```
-Second, clone data-mining ( `git clone https://github.com/jaejungscene/data-mining.git` ).  
-type and enter `flask-server.py` in terminal after go to `project/backend` folder.   
-type and enter (1)`npm install`, (2)`npm start` in terminal after go to `project/frontend` folder.  
+2. clone data-mining ( `git clone https://github.com/jaejungscene/data-mining.git` ).
+3. unzip "Books.db.zip" to "Books.db" in that location.  
+4. run both the cells of `korean-book.ipynb` and `foreign-book.ipynb` "/project/backend/preprocessing" separately to make.  
+  4-1. after (4), there will be each feature matrix of korean and foreign books.
+5. type and enter `flask-server.py` in terminal after go to `project/backend` folder.  
+6. type and enter (1)`npm install`, (2)`npm start` in terminal after go to `project/frontend` folder.  
 - warning: you have to match hostname, port number of `API_URL` variable in `project/frontend/src/conf/api-url.js` folder and values of `HOST`, `PORT` variables in `project/backend/flask-server.py`.  
 
 
