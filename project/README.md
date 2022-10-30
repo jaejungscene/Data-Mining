@@ -59,4 +59,4 @@ https://user-images.githubusercontent.com/88542073/198238373-4a68cc36-e8ed-4d51-
   - feature matrix of Foreign book is 45895(rows)x982(columns[id,binary genres vector(980),hashing value of author])
   
 ## Expreiment
-- Every expreiment result is in [project/backend/analysis/analyse.ipynb](https://github.com/jaejungscene/data-mining/tree/main/project/backend/analysis)
+- Expreiments that have every important results conpectly is in [project/backend/analysis/analyse.ipynb](https://github.com/jaejungscene/data-mining/blob/main/project/backend/analysis/analyse.py)
