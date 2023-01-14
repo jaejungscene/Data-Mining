@@ -16,7 +16,7 @@ recommendation for korean and foreign operates separatly.
 So, at least try reading my report paper and let me know by e-mail if you still don't understand something or if there's anything wrong😊
 
 
-## Web page interface - demonstration vedio
+## Web page interface - Demonstration Video
 1. https://user-images.githubusercontent.com/88542073/198238373-4a68cc36-e8ed-4d51-8807-5de73f055e64.mp4  
 2. https://user-images.githubusercontent.com/88542073/198881252-c509c9a4-8fde-4e40-a567-e11b227683ef.mp4  
 
