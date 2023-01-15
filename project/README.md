@@ -60,4 +60,4 @@ So, at least try reading my report paper and let me know by e-mail if you still 
   - feature matrix of Foreign book is 45895(rows)x982(columns[id,binary genres vector(980),hashing value of author])
   
 ## Expreiment
-- Expreiments that have every important results conpectly is in [project/backend/analysis/analyse.ipynb](https://github.com/jaejungscene/data-mining/blob/main/project/backend/analysis/analyse.py)
+- Expreiments that have every important results is in [project/backend/analysis/analyse.ipynb](https://github.com/jaejungscene/data-mining/blob/main/project/backend/analysis/analyse.py)
