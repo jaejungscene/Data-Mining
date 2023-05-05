@@ -16,8 +16,9 @@ recommendation for korean and foreign operates separatly.
 So, at least try reading my report paper and let me know by e-mail if you still don't understand something or if there's anything wrong😊
 
 
-## Web page interface - demonstration vedio
-https://user-images.githubusercontent.com/88542073/198238373-4a68cc36-e8ed-4d51-8807-5de73f055e64.mp4
+## Web page interface - Demonstration Video
+1. https://user-images.githubusercontent.com/88542073/198238373-4a68cc36-e8ed-4d51-8807-5de73f055e64.mp4  
+2. https://user-images.githubusercontent.com/88542073/198881252-c509c9a4-8fde-4e40-a567-e11b227683ef.mp4  
 
 
 ## Entire Structure
@@ -59,4 +60,4 @@ https://user-images.githubusercontent.com/88542073/198238373-4a68cc36-e8ed-4d51-
   - feature matrix of Foreign book is 45895(rows)x982(columns[id,binary genres vector(980),hashing value of author])
   
 ## Expreiment
-- Expreiments that have every important results conpectly is in [project/backend/analysis/analyse.ipynb](https://github.com/jaejungscene/data-mining/blob/main/project/backend/analysis/analyse.py)
+- Expreiments that have every important results is in [project/backend/analysis/analyse.ipynb](https://github.com/jaejungscene/data-mining/blob/main/project/backend/analysis/analyse.py)

@@ -1,5 +1,5 @@
 # Data Mining
-## algorithms practiced
+## implemented algorithms
 * Association Rules
 * Locally Sensitive Hashing
 
@@ -19,7 +19,7 @@
 <br>
 
 ## Project
-- book recommendation system
+- content-based book recommendation system
 - explanation of the project is in project folder.
   
 <br>
