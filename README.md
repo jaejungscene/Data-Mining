@@ -2,21 +2,23 @@
 ## Implemented Algorithms
 *  Association Rules
 * Locally Sensitive Hashing
-#### Clustering
+* Clustering
   * k-means
-#### Demensionality Reduction
-* SVD (Singular Value Decomposition)
-* PCA (Principal Component Anlysis)
-#### Recommendation
-* Latent Features recommendation
-* collabrative-filtering recommendation
-#### Time Serise
-* Dynamic Time Warping: DTW
-#### Link Analyse
-* PageRank
-* Hyperlink-Induced Topic Search: HITS
-#### Anomaly Detection
-* not yet..!
+* Demensionality Reduction
+  * SVD (Singular Value Decomposition)
+  * PCA (Principal Component Anlysis)
+* Recommendation
+  * Latent Features recommendation
+  * collabrative-filtering recommendation
+* Time Serise
+  * Dynamic Time Warping: DTW
+* Link Analyse
+  * PageRank
+  * Hyperlink-Induced Topic Search: HITS
+* Anomaly Detection
+  * not yet..!
+* Others
+  * Mahalanobis Distance
 
 <br>
 
