@@ -16,7 +16,7 @@ recommendation for korean and foreign operates separatly.
 So, at least try reading my report paper and let me know by e-mail if you still don't understand something or if there's anything wrong😊
 
 
-## Web page interface - Demonstration Video
+## Demonstration Video
 1. https://user-images.githubusercontent.com/88542073/198238373-4a68cc36-e8ed-4d51-8807-5de73f055e64.mp4  
 2. https://user-images.githubusercontent.com/88542073/198881252-c509c9a4-8fde-4e40-a567-e11b227683ef.mp4  
 
@@ -25,19 +25,19 @@ So, at least try reading my report paper and let me know by e-mail if you still 
 ![Screen Shot 2022-10-26 at 10 59 18 PM](https://user-images.githubusercontent.com/88542073/198236860-8cb15fc5-0834-43ae-811e-2119dc91a346.png)
 
 
-## How to opearte the entire recommendation system simply
+## How to run this project
 1. require 
-```
-- sqlite3
-- python >= 3.6
-  - sqlite3 (pip install db-sqlite3)
-  - pypark
-  - flask
-  - numpy
-  - pandas
-- nodejs & npm
-- react library: react-router-dom, antd
-```
+  ```
+  - sqlite3
+  - python >= 3.6
+    - sqlite3 (pip install db-sqlite3)
+    - pypark
+    - flask
+    - numpy
+    - pandas
+  - nodejs & npm
+  - react library: react-router-dom, antd
+  ```
 2. clone data-mining ( `git clone https://github.com/jaejungscene/data-mining.git` ).
 3. unzip "Books.db.zip" to "Books.db" in that location.  
 4. run both the cells of `korean-book.ipynb` and `foreign-book.ipynb` "/project/backend/preprocessing" separately to make.  

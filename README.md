@@ -1,30 +1,32 @@
 # Data Mining
-## implemented algorithms
-* Association Rules
+## Implemented Algorithms
+*  Association Rules
 * Locally Sensitive Hashing
-
-* k-means (Clustering)
-  
-* SVD (Demensionality Reduction)
-* PCA (Demensionality Reduction)
-
-* Latent Features recommendations (Recommendation)
-* collabrative-filtering recommendations (Recommendation)
-
-* Dynamic Time Warping: DTW (Time Series)
-
-* PageRank (Link Analyse)
-* Hyperlink-Induced Topic Search: HITS (Link Analyse)
+#### Clustering
+  * k-means
+#### Demensionality Reduction
+* SVD (Singular Value Decomposition)
+* PCA (Principal Component Anlysis)
+#### Recommendation
+* Latent Features recommendation
+* collabrative-filtering recommendation
+#### Time Serise
+* Dynamic Time Warping: DTW
+#### Link Analyse
+* PageRank
+* Hyperlink-Induced Topic Search: HITS
+#### Anomaly Detection
+* not yet..!
 
 <br>
 
 ## Project
-- content-based book recommendation system
-- explanation of the project is in project folder.
+- Content-based Book Recommendation System
+- Explanation of the project is in **[Project folder](https://github.com/jaejungscene/Data-Mining/tree/main/Project)**.
   
 <br>
 
-## envirment
+## Environment
 ```
 Ubuntu 18.04.6 LTS
 python 3.6.9
