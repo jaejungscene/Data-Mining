@@ -1,24 +1,24 @@
 # Data Mining
 ## Implemented Algorithms
-*  Association Rules
-* Locally Sensitive Hashing
+* **Association Rules**
+* **Locally Sensitive Hashing**
 * Clustering
-  * k-means
+  * **k-means**
 * Demensionality Reduction
-  * SVD (Singular Value Decomposition)
-  * PCA (Principal Component Anlysis)
+  * **SVD** (Singular Value Decomposition)
+  * **PCA** (Principal Component Anlysis)
 * Recommendation
-  * Latent Features recommendation
-  * collabrative-filtering recommendation
+  * **Latent Features** recommendation
+  * **Collabrative Filtering** recommendation
 * Time Serise
-  * Dynamic Time Warping: DTW
+  * **Dynamic Time Warping: DTW**
 * Link Analyse
-  * PageRank
-  * Hyperlink-Induced Topic Search: HITS
+  * **PageRank**
+  * **Hyperlink-Induced Topic Search: HITS**
 * Anomaly Detection
   * not yet..!
 * Others
-  * Mahalanobis Distance
+  * **Mahalanobis Distance**
 
 <br>
 
