@@ -1,6 +1,6 @@
 # Book Recommandation System
-it's Korean & Foreign Books Recommendations System.  
-this recommendation system is content-based recommendation system.  
+It's Korean & Foreign Books Recommendations System.
+And recommendation algorithm of this system is content-based recommendation algorithm.  
 the algorithm is 
   - (first), creating a vector(s) from read book list and selected genres of user
     - if only get genres from user, creating a genres binary vector.
@@ -9,10 +9,14 @@ the algorithm is
     - if only get genres from user, searching through cosine similiarty because the experiment proved that lsh search was not so good rather than linear search.
     - if get both of genres and read book list from user, searching through my similarity & my search, which is made by my idea (the experiment proved that this my method performs overwhelmingly well.
   - (third), Recommendations are made in the order of high similarity scores.  
+<p align="center">
+  <img width=80% height=80% src="https://github.com/jaejungscene/Data-Mining/assets/88542073/e236f754-0ff3-46e8-a3a7-dade4098034d">
+</p>
+
 
 you can check the results & codes of experiments in `analyse.py` and `analyse.ipynb` in "project/backend/analysis" folder.  
 recommendation for korean and foreign operates separatly.  
-[The report paper](https://github.com/jaejungscene/data-mining/blob/main/project/report-paper.pdf) written in Korean explains in detail the algorithm, the overall structure and all of this project(objective, purpose, moviation, novelty ...).  
+[The report paper (Korean)](https://github.com/jaejungscene/data-mining/blob/main/project/report-paper.pdf) written in Korean explains in detail the algorithm, the overall structure and all of this project(objective, purpose, moviation, novelty ...).  
 So, at least try reading my report paper and let me know by e-mail if you still don't understand something or if there's anything wrong😊
 
 
@@ -22,7 +26,9 @@ So, at least try reading my report paper and let me know by e-mail if you still 
 
 
 ## Entire Structure
-![Screen Shot 2022-10-26 at 10 59 18 PM](https://user-images.githubusercontent.com/88542073/198236860-8cb15fc5-0834-43ae-811e-2119dc91a346.png)
+<p align="center">
+  <img width=90% height=90% src="https://github.com/jaejungscene/Data-Mining/assets/88542073/efa42cd6-25b8-4e8e-a81e-c51dd7754298">
+</p>
 
 
 ## How to run this project
