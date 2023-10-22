@@ -1,31 +1,20 @@
 ## https://pythonbasics.org/flask-rest-api/
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 import os.path as osp
 import json
 import pickle
 from utils import search_database
 from analysis.analyse import analyse
+
 app = Flask(__name__)
-DATA_PATH = "/home/ljj0512/private/workspace/data-mining/project/backend/data"
-PORT = 8088
-HOST = "localhost"
-with open(f"{DATA_PATH}/KorBookMatrix.pkl", "rb") as f:
-    KorBookMatrix = pickle.load(f)
-with open(f"{DATA_PATH}/ForBookMatrix.pkl", "rb") as f:
-    ForBookMatrix = pickle.load(f)
+CORS(app, resources={r"*": {"origins": "*"}})
 
 
 @app.route("/korean", methods=["GET"])
 def sent_korean_genres():
-    repr_genres = []
-    with open(osp.join(DATA_PATH,"korean-representative-genres.txt"), "rb") as f:
-        repr_genres = f.read().decode("UTF-8").split("\n")
-        repr_genres = repr_genres[:len(repr_genres)-1]
-    # others_genres = []
-    # with open(osp.join(DATA_PATH,"korean-all-genres.txt"), "rb") as f:
-    #     others_genres = f.read().decode("UTF-8").split("\n")
-    #     others_genres = others_genres[:len(others_genres)-1]
     return jsonify({"reprGenres":repr_genres})
+
 
 @app.route("/korean/search=<searchData>", methods=["GET"])
 def sent_korean_search_result(searchData):
@@ -38,18 +27,10 @@ def sent_korean_search_result(searchData):
         return jsonify(searchResult)
 
 
-
 @app.route("/foreign", methods=["GET"])
 def sent_foreign_genres():
-    repr_genres = []
-    with open(osp.join(DATA_PATH,"foreign-representative-genres.txt"), "rb") as f:
-        repr_genres = f.read().decode("UTF-8").split("\n")
-        repr_genres = repr_genres[:len(repr_genres)-1]
-    # others_genres = []
-    # with open(osp.join(DATA_PATH,"foregin-all-genres.txt"), "rb") as f:
-    #     others_genres = f.read().decode("UTF-8").split("\n")
-    #     others_genres = others_genres[:len(others_genres)-1]
     return jsonify({"reprGenres":repr_genres})
+
 
 @app.route("/foreign/search=<searchData>", methods=["GET"])
 def sent_foreign_search_result(searchData):
@@ -60,7 +41,6 @@ def sent_foreign_search_result(searchData):
         return searchResult
     else:
         return jsonify(searchResult)
-
 
 
 @app.route("/recommend", methods=["POST"])
@@ -77,6 +57,35 @@ def sent_rec_result():
     # return request.json
 
 
-
 if __name__ == "__main__":
+    DATA_PATH = osp.join(osp.dirname(__file__), "data")
+    PORT = 8088
+    HOST = "0.0.0.0"
+    try:
+        with open(f"{DATA_PATH}/KorBookMatrix.pkl", "rb") as f:
+            KorBookMatrix = pickle.load(f)
+        with open(f"{DATA_PATH}/ForBookMatrix.pkl", "rb") as f:
+            ForBookMatrix = pickle.load(f)
+    except FileNotFoundError:
+        print("#### FileNotFoundError")
+
+    # others_genres = []
+    # with open(osp.join(DATA_PATH,"korean-all-genres.txt"), "rb") as f:
+    #     others_genres = f.read().decode("UTF-8").split("\n")
+    #     others_genres = others_genres[:len(others_genres)-1]
+    repr_genres = []
+    with open(osp.join(DATA_PATH,"korean-representative-genres.txt"), "rb") as f:
+        repr_genres = f.read().decode("UTF-8").split("\n")
+        repr_genres = repr_genres[:len(repr_genres)-1]
+
+
+    repr_genres = []
+    with open(osp.join(DATA_PATH,"foreign-representative-genres.txt"), "rb") as f:
+        repr_genres = f.read().decode("UTF-8").split("\n")
+        repr_genres = repr_genres[:len(repr_genres)-1]
+    # others_genres = []
+    # with open(osp.join(DATA_PATH,"foregin-all-genres.txt"), "rb") as f:
+    #     others_genres = f.read().decode("UTF-8").split("\n")
+    #     others_genres = others_genres[:len(others_genres)-1]
+
     app.run(host=HOST, port=PORT)

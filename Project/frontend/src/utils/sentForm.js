@@ -1,5 +1,5 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import {Button, Form, Divider, message} from "antd";
 import "./utils.css"
 import BookListTable from './bookList';
@@ -11,7 +11,7 @@ export default function SentFrom(props){
     const setReadBook = props.setReadBook;
     const genreToggle = props.genreToggle;
     const btnActive= props.btnActive;
-    const sentData = useHistory();
+    const sentData = useNavigate();
 
     const Submit = ()=>{
         var selectedGenres = [];

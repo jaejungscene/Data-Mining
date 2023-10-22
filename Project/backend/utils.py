@@ -1,5 +1,6 @@
 import sqlite3
 import pandas as pd
+import os.path as osp
 
 
 """
@@ -11,10 +12,16 @@ def search_database(searchData, dbname: str) -> list[dict]:
     searchStr = "%"
     for i in searchData:
         searchStr = searchStr + i + "%"
-
-    conn = sqlite3.connect("/home/ljj0512/private/workspace/data-mining/project/backend/Books.db")
+    conn = sqlite3.connect(osp.join(osp.dirname(__file__), "data", "Books.db"))
     cur = conn.cursor()
-    cur.execute(f"SELECT id, title, author, publisher, genres, rating, pages FROM {dbname} WHERE title LIKE \"{searchStr}\"")
+    cur.execute(f"""
+                SELECT id, title, author, publisher, genres, rating, pages 
+                FROM {dbname} 
+                WHERE 
+                title LIKE \"{searchStr}\" 
+                OR 
+                author LIKE \"{searchStr}\"
+                """)
     data = cur.fetchall()
     print(type(data))
     print(len(data))

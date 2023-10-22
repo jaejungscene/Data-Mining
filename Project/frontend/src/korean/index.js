@@ -5,6 +5,7 @@ import API_URL from "../conf/api-url";
 import "./index.css"
 import SearchTable from "../utils/searchTable"
 import SentFrom from '../utils/sentForm';
+import 'react-router-dom';
 
 export function KoreanBookPage(){
     const [genres, setGenres] = useState(null);
@@ -95,7 +96,7 @@ export function KoreanBookPage(){
                     <h3>인상깊게 읽었던 책이 있다면 검색창에 검색 후 추가해 보세요.</h3>
                     <Input.Search
                         size="large"
-                        placeholder='책 제목을 입력해보세요!'
+                        placeholder='책 제목 혹은 작가명을 입력해보세요!'
                         allowClear
                         enterButton
                         onSearch={onSearch}
@@ -126,7 +127,7 @@ export function KoreanBookPage(){
                     <h3>인상깊게 읽었던 책이 있다면 검색창에 검색 후 추가해 보세요.</h3>
                     <Input.Search
                         size="large"
-                        placeholder='책 제목을 입력해보세요!'
+                        placeholder='책 제목 혹은 작가명을 입력해보세요!'
                         allowClear
                         enterButton
                         onSearch={onSearch}
@@ -163,7 +164,7 @@ export function KoreanBookPage(){
                     <Input.Search
                         className="searchFrom"
                         size="large"
-                        placeholder='책 제목을 입력해보세요!'
+                        placeholder='책 제목 혹은 작가명을 입력해보세요!'
                         allowClear
                         enterButton
                         onSearch={onSearch}
