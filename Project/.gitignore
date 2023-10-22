@@ -1,7 +1,7 @@
 __pycache__
 test*
 ig_*
-*.json
+package-lock.json
 ForBookMatrix.csv
 ForBookMatrix.pkl
 KorBookMatrix.csv
